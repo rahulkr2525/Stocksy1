@@ -1,21 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import {StyleSheet, Text, View, Button} from 'react-native';
+import welcome from '../../i18n/language';
 
 const LoginScreen = ({navigation}) => {
   const onSkip = () => {
-    navigation.navigate("LandingScreen");
-  }
+    navigation.navigate('Startnow');
+  };
   return (
     <View style={styles.container}>
-      <Text style={{color: 'red'}} >Open up a App.js to start working on your app!</Text>
+      <Text style={{color: 'red'}}>hello</Text>
       {/* <StatusBar style="auto" /> */}
-      <Button
-        onPress={() => onSkip()}
-        title="Back"
-      ></Button>
+      <Button onPress={() => onSkip()} title="Back"></Button>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -26,4 +24,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { LoginScreen };
+export {LoginScreen};
