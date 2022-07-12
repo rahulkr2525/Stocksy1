@@ -18,9 +18,9 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-import { Provider } from 'react-redux';
-import { RootRouter } from './src/Navigation'
-import store from './src/Redux/store'
+import {Provider} from 'react-redux';
+import {RootRouter} from './src/Navigation';
+import store from './src/Redux/store';
 import {
   Colors,
   DebugInstructions,
@@ -31,7 +31,7 @@ import {
 
 const Section: React.FC<{
   title: string;
-}> = ({ children, title }) => {
+}> = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -62,7 +62,7 @@ const App = () => {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-    flex: 1
+    flex: 1,
   };
 
   return (
