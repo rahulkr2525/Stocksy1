@@ -7,11 +7,9 @@ import {
   StyleSheet,
 } from 'react-native';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
-import {dimension} from '../Utils/test';
+import {dimension} from '../../Utils/test';
 
-const width = Dimensions.get('window').width;
-
-const Button = ({text, onPress}) => {
+const Button1 = ({text, onPress}) => {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.btnContainerStyle}>
@@ -23,11 +21,10 @@ const Button = ({text, onPress}) => {
 
 const styles = StyleSheet.create({
   btnContainerStyle: {
-    width: dimension.width * 0.5,
-    height: dimension.height * 0.07,
-    backgroundColor: '#EBC22A',
-    marginTop: dimension.height * 0.06,
-    borderRadius: 5,
+    width: dimension.width * 0.4,
+    height: dimension.height * 0.06,
+    backgroundColor: '#F3B125',
+    borderRadius: 40,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -37,12 +34,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: 'black',
   },
-  imagestyle: {
-    height: '20%',
-    resizeMode: 'cover',
-    width: '40%',
-    marginTop: dimension.height * 0.03,
-  },
 });
 
-export default Button;
+export default Button1;

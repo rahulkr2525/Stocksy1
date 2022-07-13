@@ -1,13 +1,15 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, ImageBackground, TextInput} from 'react-native';
+import Input from '../../Components/input';
 import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 import {dimension} from '../../Utils/test';
-import Button from '../../Components/button/button';
 import Image1 from '../../Components/image';
 import welcome from '../../i18n/language';
-const Startnow = ({navigation}) => {
+import Icon from 'react-native-vector-icons/FontAwesome';
+import Button1 from '../../Components/button/buttonregister';
+const RegisterScreen = ({navigation}) => {
   const onSkip = () => {
-    navigation.navigate('RegisterScreen');
+    navigation.navigate('LoginScreen');
   };
   return (
     <View>
@@ -19,15 +21,12 @@ const Startnow = ({navigation}) => {
           <View style={styles.textviewstyle}>
             <Text style={styles.textstyle}>{welcome.title}</Text>
           </View>
-          <View
-            style={{
-              marginTop: dimension.height * 0.09,
-            }}>
-            <Text style={styles.descriptionstyle}>{welcome.description}</Text>
-            <Text style={styles.descriptionstyle2}>{welcome.description2}</Text>
+          <View style={styles.textinputview}>
+            <Icon name="phone" size={25} color="rgba(0, 0, 0, 1)" />
+            <Input placeholder="Mobile" keyboardtype="numeric" />
           </View>
           <View style={styles.buttonview}>
-            <Button text={welcome.buttontext} onPress={onSkip} />
+            <Button1 text={welcome.buttonotp} onPress={onSkip} />
           </View>
         </View>
       </ImageBackground>
@@ -40,7 +39,6 @@ const styles = StyleSheet.create({
     height: dimension.height,
     width: dimension.width,
     backgroundColor: 'rgba(3, 3, 5, 0.75)',
-    paddingTop: dimension.height * 0.05,
     alignSelf: 'center',
     alignItems: 'center',
     flexDirection: 'column',
@@ -50,7 +48,6 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
   },
-
   textstyle: {
     color: '#CDB562',
     fontSize: RFValue(32),
@@ -60,22 +57,20 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     textAlign: 'center',
   },
-  descriptionstyle: {
-    color: 'white',
-
-    fontStyle: 'normal',
-    fontSize: RFValue(25),
-  },
-  descriptionstyle2: {
-    color: 'white',
-    fontStyle: 'normal',
-    fontSize: RFValue(25),
-    marginLeft: dimension.height * 0.01,
+  textinputview: {
+    backgroundColor: 'white',
+    paddingLeft: 15,
+    height: dimension.height * 0.07,
+    width: dimension.width * 0.8,
+    borderRadius: 100,
+    alignItems: 'center',
+    marginTop: dimension.height * 0.1,
+    flexDirection: 'row',
   },
   buttonview: {
     height: dimension.height * 0.1,
-    width: dimension.width * 0.1,
-    marginTop: dimension.height * 0.07,
+    width: dimension.width * 0.5,
+    marginTop: dimension.height * 0.12,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -86,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export {Startnow};
+export {RegisterScreen};

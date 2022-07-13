@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     height: '20%',
     resizeMode: 'cover',
     width: '40%',
-    marginTop: dimension.height * 0.03,
+    marginTop: dimension.height * 0.09,
   },
 });
 
